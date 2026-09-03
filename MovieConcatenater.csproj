@@ -13,6 +13,8 @@
     <Description>同一コーデックの分割動画を FFmpeg で連結する Windows アプリ</Description>
     <ApplicationIcon />
     <Platforms>AnyCPU;x64</Platforms>
+    <!-- WPF 衛星アセンブリ（cs/de/fr 等）を出さない。ja のみ残して Single File に含める -->
+    <SatelliteResourceLanguages>ja</SatelliteResourceLanguages>
   </PropertyGroup>
 
   <!-- 配布用: Exe 単体（自己完結 + Single File） -->
