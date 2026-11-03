@@ -11,11 +11,16 @@
     <Product>MovieConcatenater</Product>
     <Title>MovieConcatenater</Title>
     <Description>同一コーデックの分割動画を FFmpeg で連結する Windows アプリ</Description>
-    <ApplicationIcon />
+    <ApplicationIcon>Assets\app-icon.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64</Platforms>
+    <Version>1.1.0</Version>
     <!-- WPF 衛星アセンブリ（cs/de/fr 等）を出さない。ja のみ残して Single File に含める -->
     <SatelliteResourceLanguages>ja</SatelliteResourceLanguages>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app-icon.ico" />
+  </ItemGroup>
 
   <!-- 配布用: Exe 単体（自己完結 + Single File） -->
   <PropertyGroup Condition="'$(DistributionPublish)' == 'true'">

@@ -249,7 +249,7 @@ public static class ConcatService
         return sb.ToString();
     }
 
-    private static async Task RunFfmpegAsync(
+    internal static async Task RunFfmpegAsync(
         string ffmpegExe,
         string arguments,
         TimeSpan totalDuration,
@@ -321,7 +321,7 @@ public static class ConcatService
         progress?.Report(new ConcatProgress { Percent = 100, Message = "完了: " + outputPath });
     }
 
-    private static void EnsureOutputReady(string outputPath)
+    internal static void EnsureOutputReady(string outputPath)
     {
         string? outputDir = Path.GetDirectoryName(outputPath);
         if (string.IsNullOrWhiteSpace(outputDir))
@@ -337,7 +337,7 @@ public static class ConcatService
         }
     }
 
-    private static string MapVideoEncoder(string codec) => codec.ToLowerInvariant() switch
+    internal static string MapVideoEncoder(string codec) => codec.ToLowerInvariant() switch
     {
         "h264" => "libx264",
         "hevc" or "h265" => "libx265",
@@ -402,7 +402,7 @@ public static class ConcatService
         return "'" + normalized.Replace("'", @"'\''") + "'";
     }
 
-    private static string Quote(string path) => "\"" + path.Replace("\"", "\\\"") + "\"";
+    internal static string Quote(string path) => "\"" + path.Replace("\"", "\\\"") + "\"";
 
     private static void TryKill(Process process)
     {
